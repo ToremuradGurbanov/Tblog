@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+
+<br />
+<button class="btn color-dark text-white">
+  <a class="btn btn-light" href="{% url 'homepage' %}">Go home </a>
+</button>
+<form method="POST">
+  {%csrf_token%}
+  <legend>Register</legend>
+  {{form|crispy}}
+  <p>
+    Already have an Account? You can Login <a href="{% url 'login' %}">here</a>
+  </p>
+  <button class="btn btn-success" type="submit">Create</button>
+</form>
+
+{% endblock %}
